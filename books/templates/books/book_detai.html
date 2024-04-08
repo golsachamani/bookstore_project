@@ -1,12 +1,13 @@
 {% extends '_base.html'%}
 
-{% block page_title%} book detai {{book.title}}{% endblock page_title %}
+{% block page_title%}book delete {{book.title}}{% endblock page_title %}
 
 {%block content%}
    <h1>{{book.title}}</h1>
    <p>{{book.description}}</p>
    <p>{{book.author}}</p>
    <h4>{{book.price}}</h4>
+   <a href="{% url 'book_update' book.id}"><button class = 'btn btn-info' type="button">update</button></a>
    <br>
    <a href="{% url 'book_list'%}"> book list</a>
 {% endblock content %}
