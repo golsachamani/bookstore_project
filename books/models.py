@@ -18,7 +18,7 @@ class Book(models.Model):
 
 class Comment(models.Model):
     text = models.TextField()
-    book = models.ForeignKey(Book, on_delete= models.CASCADE)
+    book = models.ForeignKey(Book, on_delete= models.CASCADE, related_name='comments')
     user = models.ForeignKey(get_user_model(), on_delete= models.CASCADE)
     datetime_creat = models.DateTimeField(auto_now_add= True)
 
